@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { environment } from '../environments/environment';
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    AppRoutingModule,
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpClientModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
