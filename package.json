@@ -19,7 +19,6 @@
     "@angular/platform-browser": "~13.1.0",
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
-    "@nrwl/angular": "13.4.5",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
@@ -32,6 +31,7 @@
     "@angular/cli": "~13.1.0",
     "@angular/compiler-cli": "~13.1.0",
     "@angular/language-service": "~13.1.0",
+    "@nrwl/angular": "13.4.5",
     "@nrwl/cli": "13.4.5",
     "@nrwl/cypress": "13.4.5",
     "@nrwl/eslint-plugin-nx": "13.4.5",
