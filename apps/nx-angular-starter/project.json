@@ -16,10 +16,13 @@
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/nx-angular-starter/src/favicon.ico",
-          "apps/nx-angular-starter/src/assets"
+          "apps/nx-angular-starter/src/assets",
+          "apps/nx-angular-starter/src/manifest.webmanifest"
         ],
         "styles": ["apps/nx-angular-starter/src/styles.scss"],
-        "scripts": []
+        "scripts": [],
+        "serviceWorker": true,
+        "ngswConfigPath": "apps/nx-angular-starter/ngsw-config.json"
       },
       "configurations": {
         "production": {
