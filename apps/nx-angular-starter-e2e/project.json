@@ -1,0 +1,28 @@
+{
+  "root": "apps/nx-angular-starter-e2e",
+  "sourceRoot": "apps/nx-angular-starter-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/nx-angular-starter-e2e/cypress.json",
+        "devServerTarget": "nx-angular-starter:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "nx-angular-starter:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/nx-angular-starter-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["nx-angular-starter"]
+}
