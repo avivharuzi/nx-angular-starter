@@ -8,7 +8,7 @@
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/nx-angular-starter",
+        "outputPath": "dist/apps/nx-angular-starter/browser",
         "index": "apps/nx-angular-starter/src/index.html",
         "main": "apps/nx-angular-starter/src/main.ts",
         "polyfills": "apps/nx-angular-starter/src/polyfills.ts",
@@ -91,6 +91,70 @@
         "jestConfig": "apps/nx-angular-starter/jest.config.js",
         "passWithNoTests": true
       }
+    },
+    "server": {
+      "executor": "@angular-devkit/build-angular:server",
+      "outputs": ["{options.outputPath}"],
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ],
+      "options": {
+        "outputPath": "dist/apps/nx-angular-starter/server",
+        "main": "apps/nx-angular-starter/server.ts",
+        "tsConfig": "apps/nx-angular-starter/tsconfig.server.json",
+        "inlineStyleLanguage": "scss"
+      },
+      "configurations": {
+        "production": {
+          "outputHashing": "media",
+          "fileReplacements": [
+            {
+              "replace": "apps/nx-angular-starter/src/environments/environment.ts",
+              "with": "apps/nx-angular-starter/src/environments/environment.prod.ts"
+            }
+          ]
+        },
+        "development": {
+          "optimization": false,
+          "sourceMap": true,
+          "extractLicenses": false
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve-ssr": {
+      "executor": "@nguniversal/builders:ssr-dev-server",
+      "configurations": {
+        "development": {
+          "browserTarget": "nx-angular-starter:build:development",
+          "serverTarget": "nx-angular-starter:server:development"
+        },
+        "production": {
+          "browserTarget": "nx-angular-starter:build:production",
+          "serverTarget": "nx-angular-starter:server:production"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "prerender": {
+      "executor": "@nguniversal/builders:prerender",
+      "options": {
+        "routes": ["/"]
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "nx-angular-starter:build:production",
+          "serverTarget": "nx-angular-starter:server:production"
+        },
+        "development": {
+          "browserTarget": "nx-angular-starter:build:development",
+          "serverTarget": "nx-angular-starter:server:development"
+        }
+      },
+      "defaultConfiguration": "production"
     }
   },
   "tags": []
