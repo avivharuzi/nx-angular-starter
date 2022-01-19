@@ -6,6 +6,7 @@
     "^@angular/(.*)$",
     "^rxjs(.*)$",
     "<THIRD_PARTY_MODULES>",
+    "^@nx-angular-starter/(.*)$",
     "^[./]"
   ],
   "importOrderSeparation": true,
