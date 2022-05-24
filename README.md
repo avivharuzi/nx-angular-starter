@@ -10,25 +10,34 @@ Nx workspace with Angular application template with extra features.
 
 13.1.0
 
-## Prerequisites
+## ✨ Features
+
+✅ Nx
+
+✅ SCSS Support
+
+✅ PWA (progressive web app)
+
+✅ Angular Universal (SSR)
+
+✅ Jest (unit testing)
+
+✅ Cypress (E2E testing)
+
+✅ ESLint
+
+✅ Prettier (format code style)
+
+✅ Husky (git hooks)
+
+✅ Commitizen
+
+## 🎯 Prerequisites
 
 - Node.js (>= 16 required)
 - npm package manager (>= 8 required)
 
-## Extra Features
-
-- Nx
-- SCSS Support
-- PWA (progressive web app)
-- Angular Universal (SSR)
-- Jest (unit testing)
-- Cypress (E2E testing)
-- ESLint
-- Prettier (format code style)
-- Husky (git hooks)
-- Commitizen
-
-## First Steps
+## 🎢 Getting Started
 
 - Replace all `nx-angular-starter` and `nxAngularStarter` keyword from this project with your new project name, for example: `my-website` and `myWebsite`
 - Replace `apps/nx-angular-starter/src/favicon.ico` with your website favicon
@@ -36,7 +45,7 @@ Nx workspace with Angular application template with extra features.
 - Update this `README.md` file according to your project changes
 - If you are using monorepo multi-package repository consider removing `husky` (git hooks) npm package to prevent conflicts between repos, I recommended deleting `.husky` directory, remove npm `prepare` script and run: `npm uninstall husky` and then maybe to add `husky` in the root of the project
 
-## Commands
+## 🕹 Commands
 
 Serve project in development mode.
 
