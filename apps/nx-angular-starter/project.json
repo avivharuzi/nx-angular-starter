@@ -94,6 +94,12 @@
     },
     "server": {
       "executor": "@angular-devkit/build-angular:server",
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": "self"
+        }
+      ],
       "options": {
         "outputPath": "dist/apps/nx-angular-starter/server",
         "main": "apps/nx-angular-starter/server.ts",
