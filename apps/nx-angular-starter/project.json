@@ -1,6 +1,5 @@
 {
   "projectType": "application",
-  "root": "apps/nx-angular-starter",
   "sourceRoot": "apps/nx-angular-starter/src",
   "prefix": "nx-angular-starter",
   "targets": {
@@ -80,8 +79,8 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "apps/nx-angular-starter/src/**/*.ts",
-          "apps/nx-angular-starter/src/**/*.html"
+          "apps/nx-angular-starter/**/*.ts",
+          "apps/nx-angular-starter/**/*.html"
         ]
       }
     },
@@ -89,19 +88,12 @@
       "executor": "@nrwl/jest:jest",
       "outputs": ["coverage/apps/nx-angular-starter"],
       "options": {
-        "jestConfig": "apps/nx-angular-starter/jest.config.js",
+        "jestConfig": "apps/nx-angular-starter/jest.config.ts",
         "passWithNoTests": true
       }
     },
     "server": {
       "executor": "@angular-devkit/build-angular:server",
-      "outputs": ["{options.outputPath}"],
-      "dependsOn": [
-        {
-          "target": "build",
-          "projects": "self"
-        }
-      ],
       "options": {
         "outputPath": "dist/apps/nx-angular-starter/server",
         "main": "apps/nx-angular-starter/server.ts",

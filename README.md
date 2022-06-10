@@ -4,11 +4,11 @@ Nx workspace with Angular application template with extra features.
 
 ## Nx Version
 
-13.4.5
+14.2.4
 
 ## Angular Version
 
-13.1.0
+14.0.0
 
 ## ✨ Features
 

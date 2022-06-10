@@ -1,9 +1,9 @@
 {
   "extends": "./tsconfig.app.json",
   "compilerOptions": {
-    "outDir": "../../dist/out-tsc/server",
-    "types": ["node"],
-    "target": "ES2019"
+    "outDir": "../../out-tsc/server",
+    "target": "es2019",
+    "types": ["node"]
   },
   "files": ["src/main.server.ts", "server.ts"],
   "angularCompilerOptions": {

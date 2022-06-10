@@ -20,7 +20,7 @@ export function app(): express.Express {
     ? 'index.original.html'
     : 'index';
 
-  // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
+  // Our Universal express-engine (found @ https://github.com/angular/universal/tree/main/modules/express-engine)
   server.engine(
     'html',
     ngExpressEngine({
