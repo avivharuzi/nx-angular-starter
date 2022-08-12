@@ -6,7 +6,10 @@
   },
   "cli": {
     "defaultCollection": "@nrwl/angular",
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "cache": {
+      "path": "node_modules/.cache/angular"
+    }
   },
   "implicitDependencies": {
     "package.json": {
