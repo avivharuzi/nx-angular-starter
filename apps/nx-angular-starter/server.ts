@@ -10,12 +10,14 @@ import { join } from 'path';
 import { AppServerModule } from './src/main.server';
 
 // The Express app is exported so that it can be used by serverless Functions.
-export function app(): express.Express {
+export const app = (): express.Express => {
   const server = express();
+
   const distFolder = join(
     process.cwd(),
     'dist/apps/nx-angular-starter/browser'
   );
+
   const indexHtml = existsSync(join(distFolder, 'index.original.html'))
     ? 'index.original.html'
     : 'index';
@@ -31,9 +33,11 @@ export function app(): express.Express {
   server.set('view engine', 'html');
   server.set('views', distFolder);
 
-  // Example Express Rest API endpoints
-  // server.get('/api/**', (req, res) => { });
-  // Serve static files from /browser
+  /*
+   * Example Express Rest API endpoints
+   * server.get('/api/**', (req, res) => { });
+   * Serve static files from /browser
+   */
   server.get(
     '*.*',
     express.static(distFolder, {
@@ -50,24 +54,31 @@ export function app(): express.Express {
   });
 
   return server;
-}
+};
 
-function run(): void {
+const run = (): void => {
   const port = process.env['PORT'] || 4000;
-
   // Start up the Node server
   const server = app();
+
   server.listen(port, () => {
+    // eslint-disable-next-line no-console
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
-}
+};
 
-// Webpack will replace 'require' with '__webpack_require__'
-// '__non_webpack_require__' is a proxy to Node 'require'
-// The below code is to ensure that the server is run only when not requiring the bundle.
+/*
+ * Webpack will replace 'require' with '__webpack_require__'
+ * '__non_webpack_require__' is a proxy to Node 'require'
+ * The below code is to ensure that the server is run only when not requiring the bundle.
+ */
+// eslint-disable-next-line camelcase,no-underscore-dangle
 declare const __non_webpack_require__: NodeRequire;
+
+// eslint-disable-next-line camelcase
 const mainModule = __non_webpack_require__.main;
-const moduleFilename = (mainModule && mainModule.filename) || '';
+const moduleFilename = mainModule?.filename || '';
+
 if (moduleFilename === __filename || moduleFilename.includes('iisnode')) {
   run();
 }
