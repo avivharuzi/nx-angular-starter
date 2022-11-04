@@ -8,6 +8,7 @@ const routes: Routes = [];
     RouterModule.forRoot(routes, {
       paramsInheritanceStrategy: 'always',
       scrollPositionRestoration: 'enabled',
+      initialNavigation: 'enabledBlocking',
     }),
   ],
   exports: [RouterModule],

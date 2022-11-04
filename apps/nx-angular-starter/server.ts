@@ -1,4 +1,4 @@
-import 'zone.js/dist/zone-node';
+import 'zone.js/node';
 
 import { APP_BASE_HREF } from '@angular/common';
 
@@ -12,11 +12,7 @@ import { AppServerModule } from './src/main.server';
 // The Express app is exported so that it can be used by serverless Functions.
 export const app = (): express.Express => {
   const server = express();
-
-  const distFolder = join(
-    process.cwd(),
-    'dist/apps/nx-angular-starter/browser'
-  );
+  const distFolder = join(process.cwd(), 'dist/nx-angular-starter/browser');
 
   const indexHtml = existsSync(join(distFolder, 'index.original.html'))
     ? 'index.original.html'

@@ -1,4 +1,5 @@
 {
+  "name": "nx-angular-starter-e2e",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/nx-angular-starter-e2e/src",
   "projectType": "application",
@@ -6,8 +7,9 @@
     "e2e": {
       "executor": "@nrwl/cypress:cypress",
       "options": {
-        "cypressConfig": "apps/nx-angular-starter-e2e/cypress.json",
-        "devServerTarget": "nx-angular-starter:serve:development"
+        "cypressConfig": "apps/nx-angular-starter-e2e/cypress.config.ts",
+        "devServerTarget": "nx-angular-starter:serve:development",
+        "testingType": "e2e"
       },
       "configurations": {
         "production": {

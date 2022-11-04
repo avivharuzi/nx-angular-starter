@@ -1,4 +1,6 @@
 {
+  "name": "nx-angular-starter",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "sourceRoot": "apps/nx-angular-starter/src",
   "prefix": "nx-angular-starter",
@@ -7,7 +9,7 @@
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/nx-angular-starter/browser",
+        "outputPath": "dist/nx-angular-starter/browser",
         "index": "apps/nx-angular-starter/src/index.html",
         "main": "apps/nx-angular-starter/src/main.ts",
         "polyfills": "apps/nx-angular-starter/src/polyfills.ts",
@@ -86,7 +88,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/nx-angular-starter"],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
         "jestConfig": "apps/nx-angular-starter/jest.config.ts",
         "passWithNoTests": true
@@ -94,14 +96,8 @@
     },
     "server": {
       "executor": "@angular-devkit/build-angular:server",
-      "dependsOn": [
-        {
-          "target": "build",
-          "projects": "self"
-        }
-      ],
       "options": {
-        "outputPath": "dist/apps/nx-angular-starter/server",
+        "outputPath": "dist/nx-angular-starter/server",
         "main": "apps/nx-angular-starter/server.ts",
         "tsConfig": "apps/nx-angular-starter/tsconfig.server.json",
         "inlineStyleLanguage": "scss"

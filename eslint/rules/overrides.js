@@ -20,6 +20,5 @@ module.exports = {
     'max-params': 'off',
     'max-params-no-constructor/max-params-no-constructor': ['error', 3],
     'dot-notation': 'off',
-    '@typescript-eslint/consistent-generic-constructors': 'off',
   },
 };
