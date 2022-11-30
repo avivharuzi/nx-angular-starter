@@ -12,7 +12,7 @@
         "outputPath": "dist/nx-angular-starter/browser",
         "index": "apps/nx-angular-starter/src/index.html",
         "main": "apps/nx-angular-starter/src/main.ts",
-        "polyfills": "apps/nx-angular-starter/src/polyfills.ts",
+        "polyfills": ["zone.js"],
         "tsConfig": "apps/nx-angular-starter/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
@@ -38,12 +38,6 @@
               "type": "anyComponentStyle",
               "maximumWarning": "2kb",
               "maximumError": "4kb"
-            }
-          ],
-          "fileReplacements": [
-            {
-              "replace": "apps/nx-angular-starter/src/environments/environment.ts",
-              "with": "apps/nx-angular-starter/src/environments/environment.prod.ts"
             }
           ],
           "outputHashing": "all"
@@ -104,18 +98,13 @@
       },
       "configurations": {
         "production": {
-          "outputHashing": "media",
-          "fileReplacements": [
-            {
-              "replace": "apps/nx-angular-starter/src/environments/environment.ts",
-              "with": "apps/nx-angular-starter/src/environments/environment.prod.ts"
-            }
-          ]
+          "outputHashing": "media"
         },
         "development": {
           "optimization": false,
           "sourceMap": true,
-          "extractLicenses": false
+          "extractLicenses": false,
+          "vendorChunk": true
         }
       },
       "defaultConfiguration": "production"
