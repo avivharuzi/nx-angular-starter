@@ -18,11 +18,7 @@ Nx workspace with Angular application template with extra features.
 
 ✅ PWA (progressive web app)
 
-✅ Angular Universal (SSR)
-
 ✅ Jest (unit testing)
-
-✅ Cypress (E2E testing)
 
 ✅ ESLint
 
@@ -53,28 +49,10 @@ Serve project in development mode.
 npm start
 ```
 
-Serve project in SSR mode.
-
-```bash
-npm start:ssr
-```
-
 Build project for production.
 
 ```bash
 npm run build
-```
-
-Build project for production with Angular Universal (SSR).
-
-```bash
-npm run build:ssr
-```
-
-Build project for production with Prerender.
-
-```bash
-npm run prerender
 ```
 
 Test project.
@@ -87,12 +65,6 @@ Lint project.
 
 ```bash
 npm run lint
-```
-
-Run e2e tests.
-
-```shell
-npm run e2e
 ```
 
 Run commitizen.
