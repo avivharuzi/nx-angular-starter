@@ -67,7 +67,9 @@
     },
     "@nrwl/angular:component": {
       "style": "scss",
-      "changeDetection": "OnPush"
+      "changeDetection": "OnPush",
+      "skipTests": true,
+      "standalone": true
     }
   },
   "defaultProject": "nx-angular-starter"
