@@ -10,6 +10,13 @@
     {
       "files": ["*.js", "*.jsx"],
       "extends": ["./eslint/javascript.js"]
+    },
+    {
+      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
+      "env": {
+        "jest": true
+      },
+      "rules": {}
     }
   ]
 }

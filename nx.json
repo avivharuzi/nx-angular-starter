@@ -24,14 +24,7 @@
     "default": {
       "runner": "nx/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e",
-          "server",
-          "prerender"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
       }
     }
   },
@@ -66,15 +59,24 @@
       "style": "scss",
       "linter": "eslint",
       "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
+      "e2eTestRunner": "none",
+      "skipTests": true,
+      "standalone": true,
+      "routing": true
     },
     "@nrwl/angular:library": {
       "linter": "eslint",
-      "unitTestRunner": "jest"
+      "unitTestRunner": "jest",
+      "style": "scss",
+      "changeDetection": "OnPush",
+      "skipTests": true,
+      "standalone": true
     },
     "@nrwl/angular:component": {
       "style": "scss",
-      "changeDetection": "OnPush"
+      "changeDetection": "OnPush",
+      "skipTests": true,
+      "standalone": true
     }
   },
   "defaultProject": "nx-angular-starter"

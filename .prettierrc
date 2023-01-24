@@ -1,8 +1,6 @@
 {
   "singleQuote": true,
   "importOrder": [
-    "^zone.js(.*)$",
-    "^@angular/platform-server(.*)$",
     "^@angular/(.*)$",
     "^rxjs(.*)$",
     "<THIRD_PARTY_MODULES>",
