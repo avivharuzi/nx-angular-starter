@@ -9,7 +9,7 @@
       "executor": "@angular-devkit/build-angular:browser-esbuild",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/nx-angular-starter/browser",
+        "outputPath": "dist/apps/nx-angular-starter",
         "index": "apps/nx-angular-starter/src/index.html",
         "main": "apps/nx-angular-starter/src/main.ts",
         "polyfills": ["zone.js"],
@@ -73,6 +73,7 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": [
           "apps/nx-angular-starter/**/*.ts",
@@ -86,8 +87,14 @@
       "options": {
         "jestConfig": "apps/nx-angular-starter/jest.config.ts",
         "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
       }
     }
   },
-  "tags": []
+  "tags": ["type:app"]
 }

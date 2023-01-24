@@ -1,10 +1,14 @@
 import { provideHttpClient } from '@angular/common/http';
 import { importProvidersFrom, isDevMode } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { provideRouter } from '@angular/router';
+import {
+  provideRouter,
+  withEnabledBlockingInitialNavigation,
+} from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { AppComponent } from './app/app.component';
+import { appRoutes } from './app/app.routes';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -19,8 +23,7 @@ bootstrapApplication(AppComponent, {
         registrationStrategy: 'registerWhenStable:30000',
       })
     ),
-    provideRouter([]),
+    provideRouter(appRoutes, withEnabledBlockingInitialNavigation()),
   ],
-})
   // eslint-disable-next-line no-console
-  .catch((err) => console.error(err));
+}).catch((err) => console.error(err));

@@ -4,11 +4,11 @@ Nx workspace with Angular application template with extra features.
 
 ## Nx Version
 
-15.2.3
+15.6.0
 
 ## Angular Version
 
-15.0.0
+15.1.0
 
 ## ✨ Features
 
@@ -30,7 +30,7 @@ Nx workspace with Angular application template with extra features.
 
 ## 🎯 Prerequisites
 
-- Node.js (>= 16 required)
+- Node.js (>= 18 required)
 - npm package manager (>= 8 required)
 
 ## 🎢 Getting Started
