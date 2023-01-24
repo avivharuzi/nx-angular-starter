@@ -1,6 +1,7 @@
 {
   "singleQuote": true,
   "importOrder": [
+    "^node:(.*)$",
     "^@angular/(.*)$",
     "^rxjs(.*)$",
     "<THIRD_PARTY_MODULES>",
